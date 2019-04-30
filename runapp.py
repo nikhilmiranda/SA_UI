@@ -3,7 +3,6 @@ import Classification as C
 
 
 app = Flask(__name__)
-d1 = [0.26, 56.22, 66.11, 35.69, 68.3, 56.61, 81.51, 60.28, 36.85, 33.24, 0.15]
 
 
 @app.route('/')
