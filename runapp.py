@@ -7,6 +7,8 @@ d1 = [0.26, 56.22, 66.11, 35.69, 68.3, 56.61, 81.51, 60.28, 36.85, 33.24, 0.15]
 
 
 @app.route('/')
+
+
 @app.route('/index.html')
 def home():
     return render_template('index.html', r1=C.rate1, r2=C.rate2, r3=C.rate3, r4=C.rate4)
