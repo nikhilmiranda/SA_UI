@@ -147,32 +147,25 @@ print(rate4)
 
 with open('hotel1.txt', encoding="utf8") as f1:
     content1 = f1.readlines()
-# you may also want to remove whitespace characters like `\n` at the end of each line
 content1 = [x.strip() for x in content1] 
 content1 = content1[:7]
 
 with open('hotel4.txt', encoding="utf8") as f2:
     content4 = f2.readlines()
-# you may also want to remove whitespace characters like `\n` at the end of each line
 content4 = [x.strip() for x in content4] 
 content4 = content4[:7]
 
 with open('hotel3.txt', encoding="utf8") as f3:
     content3 = f3.readlines()
-# you may also want to remove whitespace characters like `\n` at the end of each line
 content3 = [x.strip() for x in content3] 
 content3 = content3[:7]
 
 with open('hotel2.txt', encoding="utf8") as f4:
     content2 = f4.readlines()
-# you may also want to remove whitespace characters like `\n` at the end of each line
 content2 = [x.strip() for x in content2] 
 content2 = content2[:7]
 
 print(content1, content2, content3, content4)
-
-
-
 #i=0
 #hotel1_average=[]
 #hotel2_average=[]
