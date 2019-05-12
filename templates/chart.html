@@ -8,6 +8,17 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+</script>
+
 <style>
   html,
   body,
@@ -45,15 +56,22 @@
     <div class="w3-bar-block">
       <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black"
         onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
-      <a href="./index.html" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-bullseye fa-fw"></i> 
+      <a href="../index.html" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-bullseye fa-fw"></i> 
         Overview</a>
-      <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Reviews</a>
-      <a href="./hotel1.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i> Hotel 1</a>
-      <a href="./hotel2.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i> Hotel 2</a>
-      <a href="./hotel3.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i> Hotel 3</a>
-      <a href="./hotel4.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i> Hotel 4</a>
-      <a href="./chart.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-laptop fa-fw"></i> Charts</a>
-      <a href="./aboutus.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bars fa-fw"></i>  About Us</a>
+      <a href="../index.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i> 
+        Reviews</a>
+      <a href="../hotel1.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>  Hotel
+       0.8</a>
+      <a href="../hotel2.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>  Hotel
+        2</a>
+      <a href="../hotel3.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>  Hotel
+        3</a>
+      <a href="../hotel4.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>  Hotel
+        4</a>
+      <a href="../chart.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-laptop fa-fw"></i> 
+        Charts</a>
+      <a href="../aboutus.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bars fa-fw"></i>  About
+        Us</a>
       <br><br>
       <div>
         <footer class="w3-container w3-bottombar w3-topbar w3-light-grey ">
@@ -73,12 +91,157 @@
 
     <!-- Header -->
     <header class="w3-container" style="padding-top:22px">
-      <h1><b><i class="fa"></i>Overview</b></h1>
+      <h1><b><i class="fa"></i>Hotel 3</b></h1>
     </header>
 
 
+    <div class="container-fluid">
+      <canvas id="mixedHotelChart"></canvas>
+    </div>
+    <hr>
+    <div class="container-fluid">
+      <div class=" w3-half">
+        <canvas id="spiderSingleHotel"></canvas>
+      </div>
+      <div class=" w3-half">
+        <canvas id="pieSingleHotel"></canvas>
+      </div>
+    </div>
+    <hr>
+    <br>
+    <br>
+    <hr>
+    <script>
+      var parsed3 = JSON.parse('{{h3 | tojson}}');
+      let mixedHotelChart = document.getElementById('mixedHotelChart').getContext('2d');
+      let popChart = new Chart(mixedHotelChart, {
+        type: 'bar',
+        data: {
+          labels: ['Affordability', 'Amenities', 'Cleanliness', 'Customer Support', 'Food',
+            'Location', 'Quietness', 'Staff', 'View', 'Payment', 'Wifi'
+          ],
+          datasets: [{
+            label: "Hotel 3",
+            data: parsed3,
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.6)',
+              'rgba(54, 162, 235, 0.6)',
+              'rgba(255, 206, 86, 0.6)',
+              'rgba(75, 192, 192, 0.6)',
+              'rgba(25, 0, 216, 0.6)',
+              'rgba(255, 99, 132, 0.6)',
+              'rgba(137, 0, 196, 0.6)',
+              'rgba(15, 2, 0, 0.6)',
+              'rgba(255, 159, 64, 0.6)',
+              'rgba(255, 33, 0, 0.6)',
+              'rgba(75, 192, 192, 0.6)'
+            ],
+            borderWidth: 0.5,
+            borderColor: [
+              'rgba(255, 99, 132,0.8)',
+              'rgba(54, 162, 235,0.8)',
+              'rgba(255, 206, 86,0.8)',
+              'rgba(75, 192, 192,0.8)',
+              'rgba(25, 0, 216,0.8)',
+              'rgba(255, 99, 132,0.8)',
+              'rgba(137, 0, 196,0.8)',
+              'rgba(15, 2, 0,0.8)',
+              'rgba(255, 159, 64,0.8)',
+              'rgba(255, 33, 0,0.8)',
+              'rgba(75, 192, 192,0.8)'
+            ],
+            hoverBorderWidth: 1
+
+          }]
+        }
+      })
+    </script>
+
+    <script>
+      let spiderSingleHotel = document.getElementById('spiderSingleHotel').getContext('2d');
+      let secondChart = new Chart(spiderSingleHotel, {
+        type: 'radar',
+        data: {
+          labels: ['Affordability', 'Amenities', 'Cleanliness', 'Customer Support', 'Food',
+            'Location', 'Quietness', 'Staff', 'View', 'Payment', 'Wifi'
+          ],
+          datasets: [{
+            label: "Hotel 3",
+            data: [30.45, 12.27, 66.27, 70.86, 45.07, 59.25, 69.54, 62.9, 45.38, 41.48,  2.71],
+            backgroundColor: 'rgba(25, 0, 216, 0.6)',
+            borderWidth: 2,
+            borderColor: 'rgba(25, 0, 216, 0.9)',
+            hoverBorderWidth: 4
+          }]
+        }
+      })
 
 
+      let pieSingleHotel = document.getElementById('pieSingleHotel').getContext('2d');
+      let thirdChart = new Chart(pieSingleHotel, {
+        type: 'doughnut',
+        data: {
+          labels: ["good", "bad"],
+          datasets: [{
+            data: [4.5, 5.5],
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.7)',
+              'rgba(54, 162, 235, 0.7)'
+            ],
+            borderWidth: 0.5,
+            borderColor: [
+              'rgba(255, 99, 132, 0.9)',
+              'rgba(54, 162, 235, 0.9)'
+            ],
+            hoverBorderWidth: 2
+          }]
+        }
+      })
+    </script>
+
+    <div class="w3-panel">
+      <div class="w3-row-padding" style="margin:0 -16px">
+
+        <div class="w3-container">
+          <div class="w3-threequarter">
+            <h4><strong>Reviews</strong></h4>
+            <table class="w3-table w3-striped w3-white w3-bordered w3-border">
+              <tr>
+                <td><i class="fa fa-comment w3-text-green w3-large"></i></td>
+                <td>"{{ c3[0] }}"</td>
+              </tr>
+              <tr>
+                <td><i class="fa fa-comment w3-text-red w3-large"></i></td>
+                <td>"{{ c3[1] }}"</td>
+              </tr>
+              <tr>
+                <td><i class="fa fa-comment w3-text-green w3-large"></i></td>
+                <td>"{{ c3[2] }}"</td>
+              </tr>
+              <tr>
+                <td><i class="fa fa-comment w3-text-red w3-large"></i></td>
+                <td>"{{ c3[3] }}"</td>
+              </tr>
+              <tr>
+                <td><i class="fa fa-comment w3-text-green w3-large"></i></td>
+                <td>"{{ c3[4] }}"</td>
+              </tr>
+              <tr>
+                <td><i class="fa fa-comment w3-text-green w3-large"></i></td>
+                <td>"{{ c3[5] }}"</td>
+              </tr>
+              <tr>
+                <td><i class="fa fa-comment w3-text-green w3-large"></i></td>
+                <td>"{{ c3[6] }}"</td>
+              </tr>
+            </table>
+          </div>
+          <div class="w3-quarter">
+
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- End page content -->
   </div>
