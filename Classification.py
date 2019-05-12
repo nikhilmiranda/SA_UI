@@ -165,7 +165,7 @@ with open('hotel2.txt', encoding="utf8") as f4:
 content2 = [x.strip() for x in content2] 
 content2 = content2[:7]
 
-print(content1, content2, content3, content4)
+#print(content1, content2, content3, content4)
 #i=0
 #hotel1_average=[]
 #hotel2_average=[]
