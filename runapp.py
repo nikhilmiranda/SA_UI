@@ -35,12 +35,11 @@ def hotel4():
 
 @app.route('/chart.html')
 def chart():
-    return render_template('chart.html')
+    return render_template('chart.html', h3=C.hotel3_average, c3=C.content3)
 
 
 @app.route('/aboutus.html')
 def aboutus():
     return render_template('aboutus.html')
-
 
 app.run()

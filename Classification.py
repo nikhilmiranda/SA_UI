@@ -112,58 +112,42 @@ for i in list1:
     if i=='hotel4':
         for p,q in average_sentiment.items():
             hotel4_average.append(q)
-#    if i=='hotel1':
-#        hotel1_average=average_sentiment
-#    if i=='hotel2':
-#        hotel2_average=average_sentiment
-#    if i=='hotel3':
-#        hotel3_average=average_sentiment
-#    if i=='hotel4':
-#        hotel4_average=average_sentiment
+    #    if i=='hotel1':
+    #        hotel1_average=average_sentiment
+    #    if i=='hotel2':
+    #        hotel2_average=average_sentiment
+    #    if i=='hotel3':
+    #        hotel3_average=average_sentiment
+    #    if i=='hotel4':
+    #        hotel4_average=average_sentiment
     average_sentiment={}
     
-print("----------------------------------------------------")
-print("nn")
-print(hotel1_average)
-print("----------------------------------------------------")
-print("nn")
-print(hotel2_average)
-print("----------------------------------------------------")
-print("nn")
-print(hotel3_average)
-print("----------------------------------------------------")
-print("nn")
-print(hotel4_average)
-print("----------------------------------------------------")
-print("nn")
+
 rate1= round(((sum(hotel1_average))*5)/1100, 2)
 rate2= round(((sum(hotel2_average))*5)/1100, 2)
 rate3= round(((sum(hotel3_average))*5)/1100, 2)
 rate4= round(((sum(hotel4_average))*5)/1100, 2)
-print(rate1)
-print(rate2)
-print(rate3)
-print(rate4)
 
-with open('hotel1.txt', encoding="utf8") as f1:
+
+with open('hotel1FeatureReviews.txt', encoding="utf-8") as f1:
     content1 = f1.readlines()
 content1 = [x.strip() for x in content1] 
-content1 = content1[:7]
 
-with open('hotel4.txt', encoding="utf8") as f2:
+
+with open('hotel4FeatureReviews.txt', encoding="utf-8") as f2:
     content4 = f2.readlines()
 content4 = [x.strip() for x in content4] 
-content4 = content4[:7]
 
-with open('hotel3.txt', encoding="utf8") as f3:
+
+with open('hotel3FeatureReviews.txt', encoding="utf-8") as f3:
     content3 = f3.readlines()
 content3 = [x.strip() for x in content3] 
-content3 = content3[:7]
 
-with open('hotel2.txt', encoding="utf8") as f4:
+
+with open('hotel2FeatureReviews.txt', encoding="utf-8") as f4:
     content2 = f4.readlines()
 content2 = [x.strip() for x in content2] 
-content2 = content2[:7]
+
 
 #print(content1, content2, content3, content4)
 #i=0

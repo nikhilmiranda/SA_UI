@@ -94,7 +94,7 @@
           title="close side menu" id="myOverlay"></div>
 
      <!-- !PAGE CONTENT! -->
-     <div class="w3-main" style="margin-left:300px;margin-top:43px;">
+     <div class="w3-main" style="margin-left:22vw; margin-right: 1.5vw">
 
           <!-- Header -->
           <header class="w3-container" style="padding-top:22px">
@@ -115,189 +115,428 @@
                </div>
           </div>
 
-          <hr>
-          <br>
-          <br>
-          <hr>
-          <script>
-               var parsed3 = JSON.parse('{{h3 | tojson}}');
-               let mixedHotelChart = document.getElementById('mixedHotelChart').getContext('2d');
-               let popChart = new Chart(mixedHotelChart, {
-                    type: 'bar',
-                    data: {
-                         labels: ['Affordability', 'Amenities', 'Cleanliness', 'Customer Support', 'Food',
-                              'Location', 'Quietness', 'Staff', 'View', 'Payment', 'Wifi'
-                         ],
-                         datasets: [{
-                              label: "Hotel 3",
-                              data: parsed3,
-                              backgroundColor: [
-                                   'rgba(255, 99, 132, 0.6)',
-                                   'rgba(54, 162, 235, 0.6)',
-                                   'rgba(255, 206, 86, 0.6)',
-                                   'rgba(75, 192, 192, 0.6)',
-                                   'rgba(25, 0, 216, 0.6)',
-                                   'rgba(255, 99, 132, 0.6)',
-                                   'rgba(137, 0, 196, 0.6)',
-                                   'rgba(15, 2, 0, 0.6)',
-                                   'rgba(255, 159, 64, 0.6)',
-                                   'rgba(255, 33, 0, 0.6)',
-                                   'rgba(75, 192, 192, 0.6)'
-                              ],
-                              borderWidth: 0.5,
-                              borderColor: [
-                                   'rgba(255, 99, 132,0.8)',
-                                   'rgba(54, 162, 235,0.8)',
-                                   'rgba(255, 206, 86,0.8)',
-                                   'rgba(75, 192, 192,0.8)',
-                                   'rgba(25, 0, 216,0.8)',
-                                   'rgba(255, 99, 132,0.8)',
-                                   'rgba(137, 0, 196,0.8)',
-                                   'rgba(15, 2, 0,0.8)',
-                                   'rgba(255, 159, 64,0.8)',
-                                   'rgba(255, 33, 0,0.8)',
-                                   'rgba(75, 192, 192,0.8)'
-                              ],
-                              hoverBorderWidth: 1
-
-                         }]
-                    }
-               })
-          </script>
-
-          <script>
-               let spiderSingleHotel = document.getElementById('spiderSingleHotel').getContext('2d');
-               let secondChart = new Chart(spiderSingleHotel, {
-                    type: 'radar',
-                    data: {
-                         labels: ['Affordability', 'Amenities', 'Cleanliness', 'Customer Support', 'Food',
-                              'Location', 'Quietness', 'Staff', 'View', 'Payment', 'Wifi'
-                         ],
-                         datasets: [{
-                              label: "Hotel 3",
-                              data: [30.45, 12.27, 66.27, 70.86, 45.07, 59.25, 69.54, 62.9, 45.38,
-                                   41.48, 2.71
-                              ],
-                              backgroundColor: 'rgba(25, 0, 216, 0.6)',
-                              borderWidth: 2,
-                              borderColor: 'rgba(25, 0, 216, 0.9)',
-                              hoverBorderWidth: 4
-                         }]
-                    }
-               })
-
-
-               let pieSingleHotel = document.getElementById('pieSingleHotel').getContext('2d');
-               let thirdChart = new Chart(pieSingleHotel, {
-                    type: 'doughnut',
-                    data: {
-                         labels: ["good", "bad"],
-                         datasets: [{
-                              data: [4.5, 5.5],
-                              backgroundColor: [
-                                   'rgba(255, 99, 132, 0.7)',
-                                   'rgba(54, 162, 235, 0.7)'
-                              ],
-                              borderWidth: 0.5,
-                              borderColor: [
-                                   'rgba(255, 99, 132, 0.9)',
-                                   'rgba(54, 162, 235, 0.9)'
-                              ],
-                              hoverBorderWidth: 2
-                         }]
-                    }
-               })
-          </script>
-
-          <div class="w3-panel">
-               <div class="w3-row-padding" style="margin:0 -16px">
-
-                    <div class="w3-container">
-                         <div class="w3-threequarter">
-                              <h4><strong>Reviews</strong></h4>
-                              <table class="w3-table w3-striped w3-white w3-bordered w3-border">
-                                   <tr>
-                                        <td><i class="fa fa-comment w3-text-green w3-large"></i></td>
-                                        <td>"{{ c3[0] }}"</td>
-                                   </tr>
-                                   <tr>
-                                        <td><i class="fa fa-comment w3-text-red w3-large"></i></td>
-                                        <td>"{{ c3[1] }}"</td>
-                                   </tr>
-                                   <tr>
-                                        <td><i class="fa fa-comment w3-text-green w3-large"></i></td>
-                                        <td>"{{ c3[2] }}"</td>
-                                   </tr>
-                                   <tr>
-                                        <td><i class="fa fa-comment w3-text-red w3-large"></i></td>
-                                        <td>"{{ c3[3] }}"</td>
-                                   </tr>
-                                   <tr>
-                                        <td><i class="fa fa-comment w3-text-green w3-large"></i></td>
-                                        <td>"{{ c3[4] }}"</td>
-                                   </tr>
-                                   <tr>
-                                        <td><i class="fa fa-comment w3-text-green w3-large"></i></td>
-                                        <td>"{{ c3[5] }}"</td>
-                                   </tr>
-                                   <tr>
-                                        <td><i class="fa fa-comment w3-text-green w3-large"></i></td>
-                                        <td>"{{ c3[6] }}"</td>
-                                   </tr>
-                              </table>
+          <div class="w3-container">
+               <h4 class="w3-centered w3-center"><strong>Feature-wise Reviews</strong></h4>
+               <div id="accordion">
+                    <div class="card">
+                         <div class="card-header">
+                              <a class="card-link" data-toggle="collapse" href="#collapse1">
+                                   Affordability
+                              </a>
                          </div>
-                         <div class="w3-quarter">
-
+                         <div id="collapse1" class="collapse" data-parent="#accordion">
+                              <div class="card-body">
+                                   <table class="w3-table w3-striped w3-white w3-bordered w3-border">
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[0] }}"</td>
+                                        </tr>
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[1] }}"</td>
+                                        </tr>
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[2] }}"</td>
+                                        </tr>
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[3] }}"</td>
+                                        </tr>
+                                   </table>
+                              </div>
                          </div>
                     </div>
-               </div>
+
+                    <div class="card">
+                         <div class="card-header">
+                              <a class=" collapsed card-link" data-toggle="collapse" href="#collapse2">
+                                   Amenities
+                              </a>
+                         </div>
+                         <div id="collapse2" class="collapse" data-parent="#accordion">
+                              <div class="card-body">
+                                   <table class="w3-table w3-striped w3-white w3-bordered w3-border">
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[4] }}"</td>
+                                        </tr>
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[5] }}"</td>
+                                        </tr>
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[6] }}"</td>
+                                        </tr>
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[7] }}"</td>
+                                        </tr>
+                                   </table>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="card">
+                         <div class="card-header">
+                              <a class=" collapsed card-link" data-toggle="collapse" href="#collapse3">
+                                   Cleanliness
+                              </a>
+                         </div>
+                         <div id="collapse3" class="collapse" data-parent="#accordion">
+                              <div class="card-body">
+                                   <table class="w3-table w3-striped w3-white w3-bordered w3-border">
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[8] }}"</td>
+                                        </tr>
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[9] }}"</td>
+                                        </tr>
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[10] }}"</td>
+                                        </tr>
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[11] }}"</td>
+                                        </tr>
+                                   </table>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="card">
+                         <div class="card-header">
+                              <a class=" collapsed card-link" data-toggle="collapse" href="#collapse4">
+                                   Customer Support
+                              </a>
+                         </div>
+                         <div id="collapse4" class="collapse" data-parent="#accordion">
+                              <div class="card-body">
+                                   <table class="w3-table w3-striped w3-white w3-bordered w3-border">
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[12] }}"</td>
+                                        </tr>
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[13] }}"</td>
+                                        </tr>
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[14] }}"</td>
+                                        </tr>
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[15] }}"</td>
+                                        </tr>
+                                   </table>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="card">
+                         <div class="card-header">
+                              <a class=" collapsed card-link" data-toggle="collapse" href="#collapse5">
+                                   Food
+                              </a>
+                         </div>
+                         <div id="collapse5" class="collapse" data-parent="#accordion">
+                              <div class="card-body">
+                                   <table class="w3-table w3-striped w3-white w3-bordered w3-border">
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[16] }}"</td>
+                                        </tr>
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[17] }}"</td>
+                                        </tr>
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[18] }}"</td>
+                                        </tr>
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[19] }}"</td>
+                                        </tr>
+                                   </table>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="card">
+                         <div class="card-header">
+                              <a class=" collapsed card-link" data-toggle="collapse" href="#collapse6">
+                                   Location
+                              </a>
+                         </div>
+                         <div id="collapse6" class="collapse" data-parent="#accordion">
+                              <div class="card-body">
+                                   <table class="w3-table w3-striped w3-white w3-bordered w3-border">
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[20] }}"</td>
+                                        </tr>
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[21] }}"</td>
+                                        </tr>
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[22] }}"</td>
+                                        </tr>
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[23] }}"</td>
+                                        </tr>
+                                   </table>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="card">
+                         <div class="card-header">
+                              <a class=" collapsed card-link" data-toggle="collapse" href="#collapse7">
+                                   Payment
+                              </a>
+                         </div>
+                         <div id="collapse7" class="collapse" data-parent="#accordion">
+                              <div class="card-body">
+                                   <table class="w3-table w3-striped w3-white w3-bordered w3-border">
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[24] }}"</td>
+                                        </tr>
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[25] }}"</td>
+                                        </tr>
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[26] }}"</td>
+                                        </tr>
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[27] }}"</td>
+                                        </tr>
+                                   </table>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="card">
+                         <div class="card-header">
+                              <a class="collapsed card-link" data-toggle="collapse" href="#collapse8">
+                                   Quietness
+                              </a>
+                         </div>
+                         <div id="collapse8" class="collapse" data-parent="#accordion">
+                              <div class="card-body">
+                                   <table class="w3-table w3-striped w3-white w3-bordered w3-border">
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[28] }}"</td>
+                                        </tr>
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[29] }}"</td>
+                                        </tr>
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[30] }}"</td>
+                                        </tr>
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[31] }}"</td>
+                                        </tr>
+                                   </table>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="card">
+                         <div class="card-header">
+                              <a class=" collapsed card-link" data-toggle="collapse" href="#collapse9">
+                                   Staff
+                              </a>
+                         </div>
+                         <div id="collapse9" class="collapse" data-parent="#accordion">
+                              <div class="card-body">
+                                   <table class="w3-table w3-striped w3-white w3-bordered w3-border">
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[32] }}"</td>
+                                        </tr>
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[33] }}"</td>
+                                        </tr>
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[34] }}"</td>
+                                        </tr>
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[35] }}"</td>
+                                        </tr>
+                                   </table>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="card">
+                         <div class="card-header">
+                              <a class=" collapsed card-link" data-toggle="collapse" href="#collapse10">
+                                   View
+                              </a>
+                         </div>
+                         <div id="collapse10" class="collapse" data-parent="#accordion">
+                              <div class="card-body">
+                                   <table class="w3-table w3-striped w3-white w3-bordered w3-border">
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[36] }}"</td>
+                                        </tr>
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[37] }}"</td>
+                                        </tr>
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[38] }}"</td>
+                                        </tr>
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[39] }}"</td>
+                                        </tr>
+                                   </table>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="card">
+                         <div class="card-header">
+                              <a class=" collapsed card-link" data-toggle="collapse" href="#collapse11">
+                                   Wi-Fi/ Internet
+                              </a>
+                         </div>
+                         <div id="collapse11" class="collapse" data-parent="#accordion">
+                              <div class="card-body">
+                                   <table class="w3-table w3-striped w3-white w3-bordered w3-border">
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[40] }}"</td>
+                                        </tr>
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[41] }}"</td>
+                                        </tr>
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[42] }}"</td>
+                                        </tr>
+                                        <tr>
+                                             <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                             <td>"{{ c3[43] }}"</td>
+                                        </tr>
+                                   </table>
+                              </div>
+                         </div>
+                    </div>  <!--accordion-->
+               </div>    <!--accordion ka baap-->
           </div>
 
-          <div id="accordion">
+     <script>
+          var parsed3 = JSON.parse('{{h3 | tojson}}');
+          let mixedHotelChart = document.getElementById('mixedHotelChart').getContext('2d');
+          let popChart = new Chart(mixedHotelChart, {
+               type: 'bar',
+               data: {
+                    labels: ['Affordability', 'Amenities', 'Cleanliness', 'Customer Support', 'Food',
+                         'Location', 'Quietness', 'Staff', 'View', 'Payment', 'Wifi'
+                    ],
+                    datasets: [{
+                         label: "Hotel 3",
+                         data: parsed3,
+                         backgroundColor: [
+                              'rgba(255, 99, 132, 0.6)',
+                              'rgba(54, 162, 235, 0.6)',
+                              'rgba(255, 206, 86, 0.6)',
+                              'rgba(75, 192, 192, 0.6)',
+                              'rgba(25, 0, 216, 0.6)',
+                              'rgba(255, 99, 132, 0.6)',
+                              'rgba(137, 0, 196, 0.6)',
+                              'rgba(15, 2, 0, 0.6)',
+                              'rgba(255, 159, 64, 0.6)',
+                              'rgba(255, 33, 0, 0.6)',
+                              'rgba(75, 192, 192, 0.6)'
+                         ],
+                         borderWidth: 0.5,
+                         borderColor: [
+                              'rgba(255, 99, 132,0.8)',
+                              'rgba(54, 162, 235,0.8)',
+                              'rgba(255, 206, 86,0.8)',
+                              'rgba(75, 192, 192,0.8)',
+                              'rgba(25, 0, 216,0.8)',
+                              'rgba(255, 99, 132,0.8)',
+                              'rgba(137, 0, 196,0.8)',
+                              'rgba(15, 2, 0,0.8)',
+                              'rgba(255, 159, 64,0.8)',
+                              'rgba(255, 33, 0,0.8)',
+                              'rgba(75, 192, 192,0.8)'
+                         ],
+                         hoverBorderWidth: 1
 
-               <div class="card">
-                    <div class="card-header">
-                         <a class="card-link" data-toggle="collapse" href="#collapseOne">
-                              Collapsible Group Item #1
-                         </a>
-                    </div>
-                    <div id="collapseOne" class="collapse show" data-parent="#accordion">
-                         <div class="card-body">
-                              Lorem ipsum..
-                         </div>
-                    </div>
-               </div>
+                    }]
+               }
+          })
 
-               <div class="card">
-                    <div class="card-header">
-                         <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
-                              Collapsible Group Item #2
-                         </a>
-                    </div>
-                    <div id="collapseTwo" class="collapse" data-parent="#accordion">
-                         <div class="card-body">
-                              Lorem ipsum..
-                         </div>
-                    </div>
-               </div>
+          let spiderSingleHotel = document.getElementById('spiderSingleHotel').getContext('2d');
+          let secondChart = new Chart(spiderSingleHotel, {
+               type: 'radar',
+               data: {
+                    labels: ['Affordability', 'Amenities', 'Cleanliness', 'Customer Support', 'Food',
+                         'Location', 'Quietness', 'Staff', 'View', 'Payment', 'Wifi'
+                    ],
+                    datasets: [{
+                         label: "Hotel 3",
+                         data: [30.45, 12.27, 66.27, 70.86, 45.07, 59.25, 69.54, 62.9, 45.38,
+                              41.48, 2.71
+                         ],
+                         backgroundColor: 'rgba(25, 0, 216, 0.6)',
+                         borderWidth: 2,
+                         borderColor: 'rgba(25, 0, 216, 0.9)',
+                         hoverBorderWidth: 4
+                    }]
+               }
+          })
 
-               <div class="card">
-                    <div class="card-header">
-                         <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
-                              Collapsible Group Item #3
-                         </a>
-                    </div>
-                    <div id="collapseThree" class="collapse" data-parent="#accordion">
-                         <div class="card-body">
-                              Lorem ipsum..
-                         </div>
-                    </div>
-               </div>
 
-          </div>
-          <!-- End page content -->
-     </div>
-
+          let pieSingleHotel = document.getElementById('pieSingleHotel').getContext('2d');
+          let thirdChart = new Chart(pieSingleHotel, {
+               type: 'doughnut',
+               data: {
+                    labels: ["good", "bad"],
+                    datasets: [{
+                         data: [4.5, 5.5],
+                         backgroundColor: [
+                              'rgba(255, 99, 132, 0.7)',
+                              'rgba(54, 162, 235, 0.7)'
+                         ],
+                         borderWidth: 0.5,
+                         borderColor: [
+                              'rgba(255, 99, 132, 0.9)',
+                              'rgba(54, 162, 235, 0.9)'
+                         ],
+                         hoverBorderWidth: 2
+                    }]
+               }
+          })
+     </script>
      <script>
           // get the sidebar
           var mySidebar = document.getElementById("mySidebar");
